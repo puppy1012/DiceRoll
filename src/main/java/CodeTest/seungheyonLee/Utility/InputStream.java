@@ -1,4 +1,4 @@
-package Utility;
+package CodeTest.seungheyonLee.Utility;
 
 import java.util.Scanner;
 

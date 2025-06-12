@@ -1,3 +1,4 @@
+package CodeTest.seungheyonLee;
 import java.util.Scanner;
 
 public class orchard_test {
@@ -15,7 +16,7 @@ public class orchard_test {
                 gameRecord[i][j][THIRD_DICE_INDEX] = -1; // 3번째 주사위 초기화
             }
         }
-        System.out.println("this is For git desktop test");
+
         String Player1=inputPlayerName(1);
         String Player2=inputPlayerName(2);
         System.out.println(Player1+" vs "+Player2);

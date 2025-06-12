@@ -1,6 +1,6 @@
-package Account.Service;
+package Account.service;
 
 public interface AccountService {
-    int registerAccount();
-    int signInAccount();
+	int register();
+	int signIn();
 }

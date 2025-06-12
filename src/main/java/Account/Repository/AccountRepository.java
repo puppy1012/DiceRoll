@@ -1,11 +1,11 @@
-package Account.Repository;
-
-import Account.Entity.Account;
+package Account.repository;
 
 import java.util.Optional;
 
+import Account.entity.Account;
+
 public interface AccountRepository {
-    int saveAccount(Account account);
-    Optional<Account> findByUserId(String userId);
-    Optional<Account> findById(Integer id);
+	int save(Account accouunt);
+	Optional<Account> findByUserId(String userId);
+	Optional<Account> findById(Integer id);
 }
