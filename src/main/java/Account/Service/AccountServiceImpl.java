@@ -45,6 +45,7 @@ public class AccountServiceImpl implements AccountService {
 				if(maybeExisting.isPresent()) {
 					System.out.println("이미 존재하는 아이디입니다. 다른 아이디를 입력해주세요.");
 				} else {
+					System.out.println("아이디가 정상적으로 입력되었습니다.");
 					break; // 중복이 아니면 루프 탈출
 				}
 			}
@@ -58,11 +59,22 @@ public class AccountServiceImpl implements AccountService {
 				//비밀번호 길이 확인하기
 				if(password.length() <PASSWORD_MINIMUM_LENGTH) {
 					System.out.println("비밀번호가 짧습니다. 다시 작성해주세요.");
-				} else {
-					break;
+					continue;
 				}
+
+				//비밀번호 이중 확인하기
+				System.out.print("비밀번호를 다시 입력하세요: ");
+				String password2 = br.readLine();
+
+				if(!password.equals(password2)) {
+					System.out.println("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+					continue;
+				}
+
+				System.out.println("비밀번호가 정상적으로 입력되었습니다.");
+				break;
 			}
-			
+
 			//회원 저장하기
 			Account account = new Account(userId, password);
 			return accountRepository.save(account);			
